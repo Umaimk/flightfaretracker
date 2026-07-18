@@ -1,11 +1,28 @@
 body{
-    background:#f4f6f9;
+
+background-color:#f4f7fb;
+
+font-family:Arial, sans-serif;
+
 }
+
+
+.card{
+
+border-radius:15px;
+
+}
+
 
 h1{
-    font-weight:bold;
+
+font-weight:bold;
+
 }
 
-.container{
-    margin-top:80px;
+
+.btn{
+
+border-radius:10px;
+
 }
