@@ -12,19 +12,19 @@ def home():
 @app.route("/search", methods=["POST"])
 def search():
 
-    return render_template("result")
+    return render_template("result.html")
 
 
 @app.route("/history")
 def history():
 
-    return "History page coming soon"
+    return render_template("history.html")
 
 
 @app.route("/dashboard")
 def dashboard():
 
-    return "Dashboard coming soon"
+    return render_template("dashboard.html")
 
 
 
