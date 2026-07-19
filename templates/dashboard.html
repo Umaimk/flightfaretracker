@@ -25,6 +25,7 @@
 <a class="nav-link text-white" href="/history">History</a>
 
 <a class="nav-link text-white" href="/dashboard">Dashboard</a>
+<a class="nav-link text-white" href="/bookings">Confirmed Flights</a>
 
 </div>
 
@@ -52,7 +53,9 @@ Flight Fare Dashboard
 
 <h5>Total Searches</h5>
 
-<h2 class="text-primary">250</h2>
+<h2 class="text-primary">
+    {{ stats.total_searches }}
+</h2>
 
 </div>
 
@@ -70,7 +73,9 @@ Flight Fare Dashboard
 
 <h5>Average Fare</h5>
 
-<h2 class="text-success">$220</h2>
+<h2 class="text-success">
+    ${{ "%.2f"|format(stats.average_fare) }}
+</h2>
 
 </div>
 
@@ -88,7 +93,9 @@ Flight Fare Dashboard
 
 <h5>Lowest Fare</h5>
 
-<h2 class="text-warning">$90</h2>
+<h2 class="text-warning">
+    ${{ stats.lowest_fare }}
+</h2>
 
 </div>
 
@@ -106,7 +113,9 @@ Flight Fare Dashboard
 
 <h5>Highest Fare</h5>
 
-<h2 class="text-danger">$700</h2>
+<h2 class="text-danger">
+    ${{ stats.highest_fare }}
+</h2>
 
 </div>
 
@@ -116,7 +125,23 @@ Flight Fare Dashboard
 
 </div>
 
+<div class="col-md-3">
 
+<div class="card shadow text-center mb-4">
+
+<div class="card-body">
+
+<h5>Airlines Tracked</h5>
+
+<h2 class="text-info">
+    {{ stats.airlines }}
+</h2>
+
+</div>
+
+</div>
+
+</div>
 
 <div class="row mt-4">
 
@@ -173,7 +198,7 @@ AI Recommendation
 
 <h5>Tomorrow Prediction</h5>
 
-<h3>$230</h3>
+<h3>${{ predicted_price }}</h3>
 
 <hr>
 
@@ -183,7 +208,7 @@ Recommendation
 
 <br><br>
 
-<strong>BUY NOW</strong>
+<strong>{{ decision }}</strong>
 
 </div>
 
@@ -274,6 +299,36 @@ Recent Searches
 </div>
 
 </div>
+
+</div>
+
+
+<!-- Fare Trend Analysis -->
+<div class="card shadow mt-5">
+
+    <div class="card-body text-center">
+
+        <h3>
+            Fare Trend Analysis
+        </h3>
+
+
+        <img 
+        src="{{ url_for('static', filename='fare_chart.png') }}"
+        class="img-fluid"
+        alt="Fare Trend Graph">
+
+
+    </div>
+
+</div>
+
+<!-- Export Button -->
+<div class="text-center mt-4">
+
+    <a href="/export" class="btn btn-primary">
+        Export CSV
+    </a>
 
 </div>
 

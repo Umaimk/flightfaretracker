@@ -1,0 +1,4 @@
+origin,destination,airline,date,price
+New York,Los Angeles,Delta,2026-08-01,250
+New York,Los Angeles,United,2026-08-01,280
+New York,Los Angeles,American Airlines,2026-08-01,310
